@@ -1,0 +1,27 @@
+dns:
+  enable: true
+  ipv6: false
+  nameserver:
+  - 117.50.10.10
+  - 119.29.29.29
+  - 223.5.5.5
+  - tls://dns.rubyfish.cn:853
+  fallback:
+  - tls://1.1.1.1:853
+  - tls://1.0.0.1:853
+  - tls://dns.google:853
+  
+Rule:
+# (Global_media)
+# > ABC
+- 'DOMAIN-SUFFIX,edgedatg.com,Global_media'
+- 'DOMAIN-SUFFIX,go.com,Global_media'
+ 
+# > AbemaTV
+- 'DOMAIN,linear-abematv.akamaized.net,Global_media'
+- 'DOMAIN-SUFFIX,abema.io,Global_media'
+
+# GeoIP China
+GEOIP,CN,Domestic
+
+MATCH,Others
